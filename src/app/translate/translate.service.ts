@@ -16,10 +16,10 @@ export class TranslateService {
   }
   setLan(lan: string)
   {
-    console.log(lan);
     this.httpClient.get<any>('assets/' + lan + '.json')
-      .subscribe(data => {
-        this.data.emit(data);
-      });
+    .subscribe(data =>
+    {
+      this.data.emit(data);
+    });
   }
 }

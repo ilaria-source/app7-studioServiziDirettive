@@ -1,12 +1,12 @@
 <div class="col-xs-12">
-  <button class="btn btn-primary" (click)="setLan('ita')"> ITA </button>
+  <button class="btn btn-primary" (click)="setLan('ita')" [appTranslate]="button.buttonUNO">   </button>
 
-  <button class="btn btn-primary" (click)="setLan('eng')"> ENG </button>
+  <button class="btn btn-primary" (click)="setLan('eng')" [appTranslate]="button.buttonDUE">   </button>
 </div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1>Ciao</h1>
+      <h1 [appTranslate]="'pagina_principale.ciao'" > </h1>
     </div>
   </div>
 </div>

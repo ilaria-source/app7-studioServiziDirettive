@@ -2,5 +2,9 @@
   "pagina_principale":
   {
     "ciao": "Hello"
+  },
+  "button":{
+    "ita": "italian",
+    "eng": "english"
   }
 }

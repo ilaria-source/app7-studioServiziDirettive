@@ -10,7 +10,7 @@ export class TranslateDirective
 {
   @Input() set appTranslate(textTranslate: string)
   {
-    if(textTranslate !== '')
+    if(textTranslate !== ' ')
     {
       this.translateService.data
         .subscribe(res =>
@@ -18,11 +18,11 @@ export class TranslateDirective
           const test = this.recomposeObj(res, textTranslate);
           if (test !== undefined)
           {
-            this.renderer.setProperty(this.el.nativeElement, 'innetHTML', test);
+            this.renderer.setProperty(this.el.nativeElement, 'innerHTML', test);
           }
           else
           {
-            this.renderer.setProperty(this.el.nativeElement, 'innetHTML', textTranslate);
+            this.renderer.setProperty(this.el.nativeElement, 'innerHTML', textTranslate);
           }
         });
     }
@@ -33,10 +33,12 @@ export class TranslateDirective
       {
       }
       // in angular 12 devo specificare il tipo di OGNI variabile anche in ingresso e dire cosa un metodo deve restituire
+      //arriva dall'appcomponentHtml un oggetto, una stringa con dei punti
       recomposeObj(obj: any, strTest: string) : any
       {
-        //separa usando come key il punto
+        //separo l'oggetto entrato al punto
         const parts = strTest.split('.');
+        //qui viene preso solo il primo segmento dell'array [0]
         const newObj = obj[parts[0]];
         if (parts[1])
         {
@@ -44,5 +46,6 @@ export class TranslateDirective
           const newString = parts.join('.');
           return this.recomposeObj(newObj, newString);
         }
+        return newObj;
       }
 }

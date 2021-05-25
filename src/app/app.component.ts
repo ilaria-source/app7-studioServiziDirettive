@@ -9,6 +9,11 @@ import { TranslateService } from './translate/translate.service';
 
 export class AppComponent
 {
+  button = {
+    buttonUNO: 'button.ita',
+    buttonDUE: 'button.eng'
+  };
+
   constructor(private translateService: TranslateService)
   {
   }
