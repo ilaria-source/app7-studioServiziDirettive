@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TranslateService } from './translate/translate.service';
 import { TranslateDirective } from './translate/translate.direttiva';
 
+// OCCHIO ALLE VARIABILI, RISCHI DI IMPORTARE IL NULLA
 
 @NgModule({
   declarations: [
